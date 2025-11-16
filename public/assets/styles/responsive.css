@@ -2,6 +2,31 @@
     /* HEADER SECTION */
 
     /* HERO SECTION */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 50px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .image-overlay-card {
+        bottom: -25px;
+    }
 
     /* IMPACT SECTION */
 
@@ -74,6 +99,28 @@
     }
 
     /* HERO SECTION */
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stats div {
+        min-width: calc(50% - 10px);
+    }
+
+    .image-overlay-card {
+        padding: 12px 15px;
+        gap: 10px;
+        max-width: 250px;
+    }
 
     /* IMPACT SECTION */
 
@@ -107,6 +154,15 @@
     }
 
     /* HERO SECTION */
+    .hero-stats {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero-stats div {
+        min-width: 100%;
+    }
 
     /* IMPACT SECTION */
 
@@ -134,6 +190,10 @@
     /* HEADER SECTION */
 
     /* HERO SECTION */
+    .image-overlay-card {
+        max-width: 220px;
+        bottom: -20px;
+    }
 
     /* IMPACT SECTION */
 
