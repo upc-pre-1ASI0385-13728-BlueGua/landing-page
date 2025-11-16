@@ -11,7 +11,7 @@ Incluye secciones informativas, un formulario de contacto y un diseño responsiv
 
 ---
 
-## 👥 Integrantes del equipo
+## Integrantes del equipo
 
 | Nombre completo               | Rol principal |
 |-------------------------------|----------------|
