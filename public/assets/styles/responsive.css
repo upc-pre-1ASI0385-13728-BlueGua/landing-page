@@ -30,6 +30,48 @@
     }
 
     /* HEADER SECTION */
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-cta {
+        display: none;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 280px;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 30px 30px;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu > .mobile-cta {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+        color: var(--white);
+    }
 
     /* HERO SECTION */
 
@@ -60,6 +102,9 @@
     }
 
     /* HEADER SECTION */
+    .nav-menu {
+        width: 250px;
+    }
 
     /* HERO SECTION */
 
