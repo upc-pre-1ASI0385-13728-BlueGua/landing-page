@@ -1,21 +1,91 @@
-@media (max-width: 992px) {
+﻿@media (max-width: 992px) {
     /* HEADER SECTION */
 
     /* HERO SECTION */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 50px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .image-overlay-card {
+        bottom: -25px;
+    }
 
     /* IMPACT SECTION */
 
     /* WHY SECTION */
+    .feature-card {
+        padding: 20px;
+    }
 
     /* HOW IT WORKS SECTION */
+    .how-it-works-section {
+        padding: 60px 0;
+    }
 
+    .feature-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .feature-row.reverse {
+        direction: ltr;
+    }
+
+    .illustration-placeholder {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .feature-text {
+        text-align: center;
+    }
+
+    .feature-list {
+        text-align: left;
+        display: inline-block;
+    }
     /* PLANS SECTION */
+    .plan-card.popular {
+        transform: scale(1);
+    }
 
     /* TESTIMONIALS SECTION */
 
     /* FAQ SECTION */
 
     /* CONTACT SECTION */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info h2 {
+        text-align: center;
+    }
+
+    .contact-info > p {
+        text-align: center;
+    }
+
 
     /* FOOTER SECTION */
 }
@@ -30,24 +100,133 @@
     }
 
     /* HEADER SECTION */
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-cta {
+        display: none;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 280px;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 30px 30px;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu > .mobile-cta {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+        color: var(--white);
+    }
 
     /* HERO SECTION */
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stats div {
+        min-width: calc(50% - 10px);
+    }
+
+    .image-overlay-card {
+        padding: 12px 15px;
+        gap: 10px;
+        max-width: 250px;
+    }
 
     /* IMPACT SECTION */
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 
     /* WHY SECTION */
 
     /* HOW IT WORKS SECTION */
 
     /* PLANS SECTION */
+    .plans-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        max-width: 100%;
+    }
 
     /* TESTIMONIALS SECTION */
 
     /* FAQ SECTION */
 
+
     /* CONTACT SECTION */
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-details {
+        gap: 20px;
+    }
 
     /* FOOTER SECTION */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-bottom div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-bottom div a {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 576px) {
@@ -60,24 +239,72 @@
     }
 
     /* HEADER SECTION */
+    .nav-menu {
+        width: 250px;
+    }
 
     /* HERO SECTION */
+    .hero-stats {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero-stats div {
+        min-width: 100%;
+    }
 
     /* IMPACT SECTION */
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
     /* WHY SECTION */
 
     /* HOW IT WORKS SECTION */
 
     /* PLANS SECTION */
+    .plan-card {
+        padding: 25px 20px;
+    }
+
 
     /* TESTIMONIALS SECTION */
+    .testimonial-card {
+        padding: 20px;
+    }
 
     /* FAQ SECTION */
 
+
     /* CONTACT SECTION */
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-details {
+        gap: 20px;
+    }
 
     /* FOOTER SECTION */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column:first-child {
+        order: -1;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 380px) {
@@ -89,6 +316,10 @@
     /* HEADER SECTION */
 
     /* HERO SECTION */
+    .image-overlay-card {
+        max-width: 220px;
+        bottom: -20px;
+    }
 
     /* IMPACT SECTION */
 
@@ -102,7 +333,20 @@
 
     /* FAQ SECTION */
 
+
     /* CONTACT SECTION */
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-details {
+        gap: 20px;
+    }
 
     /* FOOTER SECTION */
 }
