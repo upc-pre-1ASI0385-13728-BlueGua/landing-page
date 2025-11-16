@@ -3,5 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* FAQ SECTION */
 
+
     /* CONTACT SECTION */
 });
