@@ -31,9 +31,38 @@
     /* IMPACT SECTION */
 
     /* WHY SECTION */
+    .feature-card {
+        padding: 20px;
+    }
 
     /* HOW IT WORKS SECTION */
+    .how-it-works-section {
+        padding: 60px 0;
+    }
 
+    .feature-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .feature-row.reverse {
+        direction: ltr;
+    }
+
+    .illustration-placeholder {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .feature-text {
+        text-align: center;
+    }
+
+    .feature-list {
+        text-align: left;
+        display: inline-block;
+    }
     /* PLANS SECTION */
 
     /* TESTIMONIALS SECTION */
