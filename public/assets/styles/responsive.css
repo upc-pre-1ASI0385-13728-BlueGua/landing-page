@@ -123,6 +123,10 @@
     }
 
     /* IMPACT SECTION */
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 
     /* WHY SECTION */
 
@@ -165,6 +169,10 @@
     }
 
     /* IMPACT SECTION */
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
     /* WHY SECTION */
 
