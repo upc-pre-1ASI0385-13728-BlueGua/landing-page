@@ -58,7 +58,20 @@
 
     /* FAQ SECTION */
 
+
     /* CONTACT SECTION */
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-details {
+        gap: 20px;
+    }
 
     /* FOOTER SECTION */
 }
@@ -88,7 +101,20 @@
 
     /* FAQ SECTION */
 
+
     /* CONTACT SECTION */
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-details {
+        gap: 20px;
+    }
 
     /* FOOTER SECTION */
 }
@@ -115,8 +141,22 @@
 
     /* FAQ SECTION */
 
+
     /* CONTACT SECTION */
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-details {
+        gap: 20px;
+    }
 
     /* FOOTER SECTION */
 }
+
 
