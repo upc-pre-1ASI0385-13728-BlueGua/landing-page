@@ -1,4 +1,4 @@
-@media (max-width: 992px) {
+﻿@media (max-width: 992px) {
     /* HEADER SECTION */
 
     /* HERO SECTION */
@@ -16,6 +16,19 @@
     /* FAQ SECTION */
 
     /* CONTACT SECTION */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info h2 {
+        text-align: center;
+    }
+
+    .contact-info > p {
+        text-align: center;
+    }
+
 
     /* FOOTER SECTION */
 }
@@ -106,3 +119,4 @@
 
     /* FOOTER SECTION */
 }
+
