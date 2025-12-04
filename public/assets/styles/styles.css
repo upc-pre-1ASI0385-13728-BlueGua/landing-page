@@ -100,6 +100,20 @@ section {
     color: var(--white);
 }
 
+.btn-tertiary {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-tertiary:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
 .full-width {
     display: block;
     text-align: center;
