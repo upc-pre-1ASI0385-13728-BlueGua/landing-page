@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías Educativas | BlueGua</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/favicon.ico">
+
+    <!-- Fuentes - Sin parámetros problemáticos para localhost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remixicon - Alternativa simplificada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+
+    <link rel="stylesheet" href="public/assets/styles/styles.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/header.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/footer.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/scroll-top.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/guias.css">
+    <link rel="stylesheet" href="public/assets/styles/responsive.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo" class="logo-img"> BlueGua
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html#planes">Planes</a>
+                <a href="index.html#beneficios">Beneficios</a>
+                <a href="comunidad.html">Comunidad</a>
+                <a href="guias.html" class="active">Guías</a>
+                <a href="index.html#contact">Contacto</a>
+                <a href="perfil.html" class="btn btn-primary mobile-cta"><i class="ri-user-line"></i> Mi Perfil</a>
+            </nav>
+            <div class="header-actions">
+                <a href="perfil.html" class="btn btn-primary desktop-cta"><i class="ri-user-line"></i> Mi Perfil</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="guides-hero">
+            <div class="container">
+                <h1>Guías Educativas para Ahorrar Agua</h1>
+                <p>Aprende técnicas efectivas y consejos prácticos para reducir tu consumo de agua. Todas nuestras guías están disponibles sin conexión.</p>
+            </div>
+        </section>
+
+        <!-- Recommended Guide Banner - US34 -->
+        <section class="recommended-guide" id="guia-recomendada">
+            <div class="container">
+                <div class="recommended-banner">
+                    <div class="recommended-badge">
+                        <i class="ri-star-fill"></i>
+                        <span>Guía recomendada esta semana</span>
+                    </div>
+                    <div class="recommended-content">
+                        <div class="recommended-info">
+                            <h2>10 formas simples de reducir el consumo en el hogar</h2>
+                            <p>Aprende técnicas fáciles de implementar que te ayudarán a ahorrar hasta 100 litros de agua al día en tu hogar.</p>
+                            <div class="recommended-meta">
+                                <span><i class="ri-time-line"></i> 15 min</span>
+                                <span><i class="ri-user-line"></i> Principiante</span>
+                                <span><i class="ri-bookmark-line"></i> 2.4K guardadas</span>
+                            </div>
+                            <button class="btn btn-primary" onclick="openGuideModal('recommended')">
+                                Ver guía completa <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
+                        <div class="recommended-image">
+                            <img src="https://images.unsplash.com/photo-1576398289164-c48dc021b4e1?w=500" alt="Guía recomendada">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section - US33 -->
+        <section class="guides-filters" id="filtros">
+            <div class="container">
+                <div class="filters-header">
+                    <h2>Explora Nuestras Guías</h2>
+                    <div class="search-box">
+                        <i class="ri-search-line"></i>
+                        <input type="text" id="searchGuides" placeholder="Buscar guías...">
+                    </div>
+                </div>
+
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label>Nivel:</label>
+                        <div class="filter-buttons" id="levelFilters">
+                            <button class="filter-btn active" data-level="all">Todos</button>
+                            <button class="filter-btn" data-level="principiante">Principiante</button>
+                            <button class="filter-btn" data-level="intermedio">Intermedio</button>
+                            <button class="filter-btn" data-level="avanzado">Avanzado</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Tema:</label>
+                        <div class="filter-buttons" id="themeFilters">
+                            <button class="filter-btn active" data-theme="all">Todos</button>
+                            <button class="filter-btn" data-theme="hogar">Hogar</button>
+                            <button class="filter-btn" data-theme="jardin">Jardín</button>
+                            <button class="filter-btn" data-theme="cocina">Cocina</button>
+                            <button class="filter-btn" data-theme="baño">Baño</button>
+                            <button class="filter-btn" data-theme="negocios">Negocios</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View Toggle -->
+                <div class="view-toggle">
+                    <span>Mostrar solo favoritas</span>
+                    <label class="switch">
+                        <input type="checkbox" id="favoritesToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides Grid - US31, US32 -->
+        <section class="guides-section" id="guias">
+            <div class="container">
+                <div class="guides-grid" id="guidesGrid">
+                    <!-- Las guías se cargan dinámicamente desde JavaScript -->
+                </div>
+
+                <!-- No results message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <i class="ri-search-line"></i>
+                    <h3>No se encontraron guías</h3>
+                    <p>Intenta con otros filtros o palabras clave</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalized Recommendations - US42 -->
+        <section class="recommendations-section" id="recomendaciones">
+            <div class="container">
+                <h2>Recomendadas para ti</h2>
+                <p>Basadas en tu consumo de agua y progreso en las guías</p>
+
+                <div class="recommendations-grid">
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="ri-lightbulb-line"></i>
+                        </div>
+                        <h3>Detectamos alto consumo en ducha</h3>
+                        <p>Te recomendamos la guía "Baño y ducha eficientes" para reducir tu consumo hasta un 30%.</p>
+                        <button class="btn btn-primary btn-sm" onclick="openGuideModal(4)">Ver guía</button>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="ri-plant-line"></i>
+                        </div>
+                        <h3>Es temporada de jardinería</h3>
+                        <p>Aprende técnicas de riego eficiente perfectas para esta época del año.</p>
+                        <button class="btn btn-primary btn-sm" onclick="openGuideModal(2)">Ver guía</button>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="ri-award-line"></i>
+                        </div>
+                        <h3>¡Ya completaste 3 guías!</h3>
+                        <p>Continúa tu aprendizaje con guías de nivel intermedio.</p>
+                        <button class="btn btn-primary btn-sm" onclick="filterByLevel('intermedio')">Ver guías</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo">
+                        <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo" class="logo-img"> BlueGua
+                    </a>
+                    <p>La plataforma educativa que ayuda a comunidades a ahorrar agua y proteger el medio ambiente.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Producto</h4>
+                    <a href="guias.html">Guías</a>
+                    <a href="index.html#planes">Planes</a>
+                    <a href="index.html#beneficios">Beneficios</a>
+                    <a href="#">Comunidad</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Compañía</h4>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Prensa</a>
+                    <a href="index.html#contact">Contacto</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Licencias</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 BlueGua. Todos los derechos reservados.</p>
+                <div>
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Guide Modal - US35 (con test) -->
+    <div class="modal guide-modal" id="guideModal">
+        <div class="modal-content guide-modal-content">
+            <div class="modal-header">
+                <h2 id="guideModalTitle">Título de la Guía</h2>
+                <button class="modal-close" onclick="closeGuideModal()" aria-label="Cerrar">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="modal-body guide-modal-body" id="guideModalBody">
+                <!-- Contenido dinámico de la guía -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal - US36 -->
+    <div class="modal share-modal" id="shareModal">
+        <div class="modal-content share-modal-content">
+            <div class="modal-header">
+                <h2>Compartir Guía</h2>
+                <button class="modal-close" onclick="closeShareModal()" aria-label="Cerrar">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Comparte esta guía con tu familia y amigos</p>
+                <div class="share-options">
+                    <button class="share-btn whatsapp" onclick="shareOn('whatsapp')">
+                        <i class="ri-whatsapp-line"></i>
+                        WhatsApp
+                    </button>
+                    <button class="share-btn facebook" onclick="shareOn('facebook')">
+                        <i class="ri-facebook-fill"></i>
+                        Facebook
+                    </button>
+                    <button class="share-btn twitter" onclick="shareOn('twitter')">
+                        <i class="ri-twitter-fill"></i>
+                        Twitter
+                    </button>
+                    <button class="share-btn email" onclick="shareOn('email')">
+                        <i class="ri-mail-line"></i>
+                        Email
+                    </button>
+                </div>
+                <div class="share-link">
+                    <input type="text" id="shareLinkInput" readonly value="">
+                    <button class="btn btn-primary" onclick="copyShareLink()">
+                        <i class="ri-file-copy-line"></i> Copiar enlace
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button - US08 -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Volver arriba">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offlineIndicator">
+        <i class="ri-wifi-off-line"></i>
+        <span>Modo sin conexión activado</span>
+    </div>
+
+    <script src="public/assets/scripts/guias_new.js"></script>
+</body>
+</html>
