@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad | BlueGua</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/favicon.ico">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remixicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="public/assets/styles/styles.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/header.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/footer.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/scroll-top.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/comunidad.css">
+    <link rel="stylesheet" href="public/assets/styles/responsive.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo" class="logo-img"> BlueGua
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html#planes">Planes</a>
+                <a href="index.html#beneficios">Beneficios</a>
+                <a href="comunidad.html" class="active">Comunidad</a>
+                <a href="guias.html">Guías</a>
+                <a href="index.html#contact">Contacto</a>
+                <a href="perfil.html" class="btn btn-primary mobile-cta"><i class="ri-user-line"></i> Mi Perfil</a>
+            </nav>
+            <div class="header-actions">
+                <a href="perfil.html" class="btn btn-primary desktop-cta"><i class="ri-user-line"></i> Mi Perfil</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="community-hero">
+            <div class="container">
+                <h1>Comunidad BlueGua</h1>
+                <p>Únete a miles de personas comprometidas con el ahorro de agua. Comparte logros, aprende de otros y juntos hagamos la diferencia.</p>
+                <div class="hero-stats-community">
+                    <div class="stat-item">
+                        <i class="ri-group-line"></i>
+                        <strong>10,247</strong>
+                        <span>Miembros activos</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="ri-chat-3-line"></i>
+                        <strong>5,832</strong>
+                        <span>Publicaciones</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="ri-trophy-line"></i>
+                        <strong>2,156</strong>
+                        <span>Logros compartidos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mi Consumo Estimado - US41 -->
+        <section class="my-consumption-section" id="mi-consumo">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="ri-bar-chart-box-line"></i> Mi Consumo Estimado</h2>
+                    <p>Monitorea tu progreso y celebra tus logros de ahorro</p>
+                </div>
+
+                <div class="consumption-dashboard">
+                    <div class="consumption-card main-stats">
+                        <div class="consumption-header">
+                            <h3>Resumen del Mes</h3>
+                            <select id="periodFilter" class="period-selector">
+                                <option value="week">Esta semana</option>
+                                <option value="month" selected>Este mes</option>
+                                <option value="year">Este año</option>
+                            </select>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-icon savings">
+                                    <i class="ri-drop-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="waterSaved">234</span>
+                                    <span class="stat-label">Litros ahorrados</span>
+                                </div>
+                                <span class="stat-change positive">
+                                    <i class="ri-arrow-up-line"></i> 15%
+                                </span>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon consumption">
+                                    <i class="ri-water-flash-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="avgConsumption">125</span>
+                                    <span class="stat-label">L/día promedio</span>
+                                </div>
+                                <span class="stat-change negative">
+                                    <i class="ri-arrow-down-line"></i> 8%
+                                </span>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon streak">
+                                    <i class="ri-fire-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="currentStreak">12</span>
+                                    <span class="stat-label">Días de racha</span>
+                                </div>
+                                <span class="stat-change neutral">
+                                    <i class="ri-medal-line"></i> Récord: 18
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consumption-card chart-container">
+                        <h3>Consumo Semanal</h3>
+                        <div class="bar-chart" id="weeklyChart">
+                            <div class="chart-bar" data-value="85" style="--bar-height: 85%;">
+                                <span class="bar-value">127L</span>
+                                <span class="bar-label">Lun</span>
+                            </div>
+                            <div class="chart-bar" data-value="70" style="--bar-height: 70%;">
+                                <span class="bar-value">105L</span>
+                                <span class="bar-label">Mar</span>
+                            </div>
+                            <div class="chart-bar" data-value="90" style="--bar-height: 90%;">
+                                <span class="bar-value">135L</span>
+                                <span class="bar-label">Mié</span>
+                            </div>
+                            <div class="chart-bar" data-value="65" style="--bar-height: 65%;">
+                                <span class="bar-value">98L</span>
+                                <span class="bar-label">Jue</span>
+                            </div>
+                            <div class="chart-bar today" data-value="55" style="--bar-height: 55%;">
+                                <span class="bar-value">82L</span>
+                                <span class="bar-label">Vie</span>
+                            </div>
+                            <div class="chart-bar" data-value="75" style="--bar-height: 75%;">
+                                <span class="bar-value">112L</span>
+                                <span class="bar-label">Sáb</span>
+                            </div>
+                            <div class="chart-bar" data-value="80" style="--bar-height: 80%;">
+                                <span class="bar-value">120L</span>
+                                <span class="bar-label">Dom</span>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="dot normal"></span> Normal</span>
+                            <span class="legend-item"><span class="dot good"></span> Bajo consumo</span>
+                            <span class="legend-item"><span class="dot today-dot"></span> Hoy</span>
+                        </div>
+                    </div>
+
+                    <div class="consumption-card achievements-preview">
+                        <h3>Próximas Metas</h3>
+                        <div class="goal-progress">
+                            <div class="goal-item">
+                                <div class="goal-icon">🎯</div>
+                                <div class="goal-info">
+                                    <span class="goal-name">Ahorrador Novato</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%;"></div>
+                                    </div>
+                                    <span class="goal-status">75/100 litros</span>
+                                </div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-icon">🔥</div>
+                                <div class="goal-info">
+                                    <span class="goal-name">Racha de 2 semanas</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 86%;"></div>
+                                    </div>
+                                    <span class="goal-status">12/14 días</span>
+                                </div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-icon">💧</div>
+                                <div class="goal-info">
+                                    <span class="goal-name">500L mensuales</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 47%;"></div>
+                                    </div>
+                                    <span class="goal-status">234/500 litros</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary full-width" onclick="shareAchievement()">
+                            <i class="ri-share-line"></i> Compartir mi progreso
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Muro Comunitario - US20, US37, US38, US39 -->
+        <section class="community-wall-section" id="muro">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="ri-chat-smile-3-line"></i> Muro Comunitario</h2>
+                    <p>Comparte tus logros, comenta y conecta con otros ahorradores</p>
+                </div>
+
+                <!-- Crear publicación - US37 -->
+                <div class="create-post-container">
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/100?img=68" alt="Tu avatar">
+                    </div>
+                    <div class="post-input-wrapper">
+                        <textarea id="postContent" placeholder="¿Qué logro quieres compartir hoy? 💧" maxlength="500"></textarea>
+                        <div class="post-actions">
+                            <div class="post-options">
+                                <button class="post-option" onclick="addAchievementTag('guia')" title="Guía completada">
+                                    <i class="ri-book-open-line"></i>
+                                </button>
+                                <button class="post-option" onclick="addAchievementTag('reto')" title="Reto superado">
+                                    <i class="ri-trophy-line"></i>
+                                </button>
+                                <button class="post-option" onclick="addAchievementTag('meta')" title="Meta alcanzada">
+                                    <i class="ri-flag-line"></i>
+                                </button>
+                                <button class="post-option" onclick="addPhoto()" title="Agregar foto">
+                                    <i class="ri-image-line"></i>
+                                </button>
+                            </div>
+                            <div class="post-submit">
+                                <span class="char-count"><span id="charCount">0</span>/500</span>
+                                <button class="btn btn-primary" onclick="publishPost()" id="publishBtn" disabled>
+                                    <i class="ri-send-plane-fill"></i> Publicar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtros del muro -->
+                <div class="wall-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="ri-apps-line"></i> Todos
+                    </button>
+                    <button class="filter-btn" data-filter="logros">
+                        <i class="ri-trophy-line"></i> Logros
+                    </button>
+                    <button class="filter-btn" data-filter="tips">
+                        <i class="ri-lightbulb-line"></i> Tips
+                    </button>
+                    <button class="filter-btn" data-filter="retos">
+                        <i class="ri-fire-line"></i> Retos
+                    </button>
+                </div>
+
+                <!-- Publicaciones -->
+                <div class="posts-container" id="postsContainer">
+                    <!-- Post 1 - Logro compartido -->
+                    <article class="post-card" data-type="logros" data-id="1">
+                        <div class="post-header">
+                            <div class="post-author">
+                                <img src="https://i.pravatar.cc/100?img=32" alt="María García" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>María García</strong>
+                                    <span class="post-time">Hace 2 horas</span>
+                                </div>
+                            </div>
+                            <span class="post-badge achievement">
+                                <i class="ri-trophy-fill"></i> Logro
+                            </span>
+                        </div>
+                        <div class="post-content">
+                            <p>¡Acabo de completar el reto "Ducha Express"! 🚿 Logré reducir mi tiempo de ducha a 5 minutos durante toda la semana. ¡234 litros ahorrados! 💧</p>
+                            <div class="achievement-card">
+                                <div class="achievement-icon">🏆</div>
+                                <div class="achievement-details">
+                                    <strong>Reto Completado: Ducha Express</strong>
+                                    <span>234 litros ahorrados en 7 días</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-stats">
+                            <span class="stat"><i class="ri-heart-fill"></i> <span class="like-count">47</span></span>
+                            <span class="stat"><i class="ri-chat-3-line"></i> <span class="comment-count">12</span> comentarios</span>
+                        </div>
+                        <div class="post-actions-bar">
+                            <button class="action-btn like-btn" onclick="toggleLike(1)">
+                                <i class="ri-heart-line"></i> Me gusta
+                            </button>
+                            <button class="action-btn comment-btn" onclick="toggleComments(1)">
+                                <i class="ri-chat-3-line"></i> Comentar
+                            </button>
+                            <button class="action-btn share-btn" onclick="sharePost(1)">
+                                <i class="ri-share-line"></i> Compartir
+                            </button>
+                        </div>
+                        <!-- Sección de comentarios - US38 -->
+                        <div class="comments-section" id="comments-1" style="display: none;">
+                            <div class="comments-list">
+                                <div class="comment">
+                                    <img src="https://i.pravatar.cc/100?img=15" alt="Carlos" class="comment-avatar">
+                                    <div class="comment-body">
+                                        <div class="comment-header">
+                                            <strong>Carlos Mendoza</strong>
+                                            <span class="comment-time">Hace 1 hora</span>
+                                        </div>
+                                        <p>¡Increíble María! Yo aún estoy en los 8 minutos, pero voy mejorando 💪</p>
+                                        <div class="comment-actions">
+                                            <button class="comment-like" onclick="likeComment(1, 1)">
+                                                <i class="ri-heart-line"></i> <span>5</span>
+                                            </button>
+                                            <button class="comment-reply">Responder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <img src="https://i.pravatar.cc/100?img=23" alt="Ana" class="comment-avatar">
+                                    <div class="comment-body">
+                                        <div class="comment-header">
+                                            <strong>Ana Torres</strong>
+                                            <span class="comment-time">Hace 45 min</span>
+                                        </div>
+                                        <p>¿Algún tip para lograrlo? Mi récord son 7 minutos 😅</p>
+                                        <div class="comment-actions">
+                                            <button class="comment-like" onclick="likeComment(1, 2)">
+                                                <i class="ri-heart-line"></i> <span>3</span>
+                                            </button>
+                                            <button class="comment-reply">Responder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-comment">
+                                <img src="https://i.pravatar.cc/100?img=68" alt="Tu avatar" class="comment-avatar">
+                                <div class="comment-input-wrapper">
+                                    <input type="text" placeholder="Escribe un comentario..." maxlength="500" class="comment-input" data-post-id="1">
+                                    <button class="send-comment-btn" onclick="sendComment(1)">
+                                        <i class="ri-send-plane-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 - Tip -->
+                    <article class="post-card" data-type="tips" data-id="2">
+                        <div class="post-header">
+                            <div class="post-author">
+                                <img src="https://i.pravatar.cc/100?img=11" alt="Roberto Sánchez" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>Roberto Sánchez</strong>
+                                    <span class="post-time">Hace 5 horas</span>
+                                </div>
+                            </div>
+                            <span class="post-badge tip">
+                                <i class="ri-lightbulb-fill"></i> Tip
+                            </span>
+                        </div>
+                        <div class="post-content">
+                            <p>💡 <strong>Tip del día:</strong> Coloca una botella llena de agua dentro del tanque del inodoro. Ahorrarás hasta 2 litros por descarga sin afectar el funcionamiento. ¡Pequeño cambio, gran impacto!</p>
+                        </div>
+                        <div class="post-stats">
+                            <span class="stat"><i class="ri-heart-fill"></i> <span class="like-count">89</span></span>
+                            <span class="stat"><i class="ri-chat-3-line"></i> <span class="comment-count">24</span> comentarios</span>
+                        </div>
+                        <div class="post-actions-bar">
+                            <button class="action-btn like-btn" onclick="toggleLike(2)">
+                                <i class="ri-heart-line"></i> Me gusta
+                            </button>
+                            <button class="action-btn comment-btn" onclick="toggleComments(2)">
+                                <i class="ri-chat-3-line"></i> Comentar
+                            </button>
+                            <button class="action-btn share-btn" onclick="sharePost(2)">
+                                <i class="ri-share-line"></i> Compartir
+                            </button>
+                        </div>
+                        <div class="comments-section" id="comments-2" style="display: none;">
+                            <div class="comments-list">
+                                <div class="comment">
+                                    <img src="https://i.pravatar.cc/100?img=44" alt="Laura" class="comment-avatar">
+                                    <div class="comment-body">
+                                        <div class="comment-header">
+                                            <strong>Laura Vega</strong>
+                                            <span class="comment-time">Hace 3 horas</span>
+                                        </div>
+                                        <p>¡Lo probé y funciona perfecto! Gracias por el tip 🙌</p>
+                                        <div class="comment-actions">
+                                            <button class="comment-like">
+                                                <i class="ri-heart-line"></i> <span>12</span>
+                                            </button>
+                                            <button class="comment-reply">Responder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-comment">
+                                <img src="https://i.pravatar.cc/100?img=68" alt="Tu avatar" class="comment-avatar">
+                                <div class="comment-input-wrapper">
+                                    <input type="text" placeholder="Escribe un comentario..." maxlength="500" class="comment-input" data-post-id="2">
+                                    <button class="send-comment-btn" onclick="sendComment(2)">
+                                        <i class="ri-send-plane-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 - Reto -->
+                    <article class="post-card" data-type="retos" data-id="3">
+                        <div class="post-header">
+                            <div class="post-author">
+                                <img src="https://i.pravatar.cc/100?img=52" alt="BlueGua Team" class="author-avatar verified">
+                                <div class="author-info">
+                                    <strong>BlueGua Team <i class="ri-verified-badge-fill verified-badge"></i></strong>
+                                    <span class="post-time">Hace 1 día</span>
+                                </div>
+                            </div>
+                            <span class="post-badge challenge">
+                                <i class="ri-fire-fill"></i> Reto Semanal
+                            </span>
+                        </div>
+                        <div class="post-content">
+                            <p>🔥 <strong>¡Nuevo Reto Semanal!</strong></p>
+                            <p>Esta semana te retamos a usar solo agua fría para lavar los platos. ¡Ahorrarás agua y energía! ¿Te animas?</p>
+                            <div class="challenge-card">
+                                <div class="challenge-info">
+                                    <h4>Reto: Platos en Frío</h4>
+                                    <p>7 días lavando platos sin agua caliente</p>
+                                    <div class="challenge-reward">
+                                        <span>🏅 Recompensa: Badge "Eco Warrior"</span>
+                                    </div>
+                                </div>
+                                <div class="challenge-participants">
+                                    <div class="participants-avatars">
+                                        <img src="https://i.pravatar.cc/100?img=1" alt="Participante">
+                                        <img src="https://i.pravatar.cc/100?img=2" alt="Participante">
+                                        <img src="https://i.pravatar.cc/100?img=3" alt="Participante">
+                                        <span class="more-participants">+142</span>
+                                    </div>
+                                    <span>145 participantes</span>
+                                </div>
+                                <button class="btn btn-primary join-challenge" onclick="joinChallenge(3)">
+                                    <i class="ri-add-line"></i> Unirme al reto
+                                </button>
+                            </div>
+                        </div>
+                        <div class="post-stats">
+                            <span class="stat"><i class="ri-heart-fill"></i> <span class="like-count">256</span></span>
+                            <span class="stat"><i class="ri-chat-3-line"></i> <span class="comment-count">58</span> comentarios</span>
+                        </div>
+                        <div class="post-actions-bar">
+                            <button class="action-btn like-btn" onclick="toggleLike(3)">
+                                <i class="ri-heart-line"></i> Me gusta
+                            </button>
+                            <button class="action-btn comment-btn" onclick="toggleComments(3)">
+                                <i class="ri-chat-3-line"></i> Comentar
+                            </button>
+                            <button class="action-btn share-btn" onclick="sharePost(3)">
+                                <i class="ri-share-line"></i> Compartir
+                            </button>
+                        </div>
+                        <div class="comments-section" id="comments-3" style="display: none;">
+                            <div class="comments-list">
+                                <div class="comment">
+                                    <img src="https://i.pravatar.cc/100?img=28" alt="Pedro" class="comment-avatar">
+                                    <div class="comment-body">
+                                        <div class="comment-header">
+                                            <strong>Pedro Ramírez</strong>
+                                            <span class="comment-time">Hace 20 horas</span>
+                                        </div>
+                                        <p>¡Ya llevo 3 días! Al principio cuesta pero te acostumbras rápido 💪</p>
+                                        <div class="comment-actions">
+                                            <button class="comment-like">
+                                                <i class="ri-heart-line"></i> <span>18</span>
+                                            </button>
+                                            <button class="comment-reply">Responder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-comment">
+                                <img src="https://i.pravatar.cc/100?img=68" alt="Tu avatar" class="comment-avatar">
+                                <div class="comment-input-wrapper">
+                                    <input type="text" placeholder="Escribe un comentario..." maxlength="500" class="comment-input" data-post-id="3">
+                                    <button class="send-comment-btn" onclick="sendComment(3)">
+                                        <i class="ri-send-plane-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 - Guía completada -->
+                    <article class="post-card" data-type="logros" data-id="4">
+                        <div class="post-header">
+                            <div class="post-author">
+                                <img src="https://i.pravatar.cc/100?img=36" alt="Lucía Fernández" class="author-avatar">
+                                <div class="author-info">
+                                    <strong>Lucía Fernández</strong>
+                                    <span class="post-time">Hace 2 días</span>
+                                </div>
+                            </div>
+                            <span class="post-badge guide">
+                                <i class="ri-book-open-fill"></i> Guía
+                            </span>
+                        </div>
+                        <div class="post-content">
+                            <p>📚 ¡Terminé la guía "Riego eficiente del jardín"! Aprendí muchísimo sobre sistemas de goteo. Mi jardín ahora consume 40% menos agua 🌱</p>
+                            <div class="achievement-card guide-complete">
+                                <div class="achievement-icon">📖</div>
+                                <div class="achievement-details">
+                                    <strong>Guía Completada: Riego eficiente del jardín</strong>
+                                    <span>8 lecciones • 20 minutos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-stats">
+                            <span class="stat"><i class="ri-heart-fill"></i> <span class="like-count">34</span></span>
+                            <span class="stat"><i class="ri-chat-3-line"></i> <span class="comment-count">8</span> comentarios</span>
+                        </div>
+                        <div class="post-actions-bar">
+                            <button class="action-btn like-btn" onclick="toggleLike(4)">
+                                <i class="ri-heart-line"></i> Me gusta
+                            </button>
+                            <button class="action-btn comment-btn" onclick="toggleComments(4)">
+                                <i class="ri-chat-3-line"></i> Comentar
+                            </button>
+                            <button class="action-btn share-btn" onclick="sharePost(4)">
+                                <i class="ri-share-line"></i> Compartir
+                            </button>
+                        </div>
+                        <div class="comments-section" id="comments-4" style="display: none;">
+                            <div class="comments-list"></div>
+                            <div class="add-comment">
+                                <img src="https://i.pravatar.cc/100?img=68" alt="Tu avatar" class="comment-avatar">
+                                <div class="comment-input-wrapper">
+                                    <input type="text" placeholder="Escribe un comentario..." maxlength="500" class="comment-input" data-post-id="4">
+                                    <button class="send-comment-btn" onclick="sendComment(4)">
+                                        <i class="ri-send-plane-fill"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Cargar más -->
+                <div class="load-more-container">
+                    <button class="btn btn-secondary" onclick="loadMorePosts()">
+                        <i class="ri-refresh-line"></i> Cargar más publicaciones
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios - US10 -->
+        <section class="testimonials-community-section" id="testimonios">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="ri-chat-quote-line"></i> Historias de Éxito</h2>
+                    <p>Descubre cómo otros usuarios están transformando su relación con el agua</p>
+                </div>
+
+                <div class="testimonials-slider" id="testimonialsSlider">
+                    <div class="testimonials-track">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                                <p>"BlueGua cambió completamente nuestra forma de consumir agua en casa. En solo 3 meses redujimos nuestra factura un 35%. Lo mejor es la comunidad, siempre hay alguien dispuesto a ayudar con consejos."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=47" alt="Carmen López">
+                                    <div>
+                                        <strong>Carmen López</strong>
+                                        <span>Lima, Perú • Miembro desde 2024</span>
+                                        <div class="author-stats">
+                                            <span><i class="ri-drop-fill"></i> 1,234L ahorrados</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                                <p>"Como gerente de un restaurante, el agua es un recurso crítico. Con BlueGua implementamos cambios que nos ahorraron miles de soles al año. El panel de estadísticas es increíblemente útil."</p>
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=12" alt="Miguel Rodríguez">
+                                    <div>
+                                        <strong>Miguel Rodríguez</strong>
+                                        <span>Arequipa, Perú • Miembro desde 2023</span>
+                                        <div class="author-stats">
+                                            <span><i class="ri-drop-fill"></i> 15,678L ahorrados</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                                <p>"Los retos semanales me mantienen motivada. Es increíble ver cómo pequeños cambios suman grandes resultados. ¡Ya completé 15 retos y gané mi badge de Eco Warrior!"</p>
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=25" alt="Sofía Martínez">
+                                    <div>
+                                        <strong>Sofía Martínez</strong>
+                                        <span>Cusco, Perú • Miembro desde 2024</span>
+                                        <div class="author-stats">
+                                            <span><i class="ri-drop-fill"></i> 856L ahorrados</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
+                                <p>"Vivo en una zona rural donde el agua es escasa. Las guías de BlueGua me enseñaron a instalar un sistema de captación de lluvia. ¡Ahora tengo agua para mi huerto todo el año!"</p>
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=59" alt="José Huamán">
+                                    <div>
+                                        <strong>José Huamán</strong>
+                                        <span>Puno, Perú • Miembro desde 2023</span>
+                                        <div class="author-stats">
+                                            <span><i class="ri-drop-fill"></i> 5,432L ahorrados</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn prev" onclick="slideTestimonials(-1)">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </button>
+                        <div class="slider-dots" id="sliderDots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <button class="slider-btn next" onclick="slideTestimonials(1)">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ranking y Líderes -->
+        <section class="leaderboard-section" id="ranking">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="ri-medal-line"></i> Tabla de Líderes</h2>
+                    <p>Los ahorradores más destacados de este mes</p>
+                </div>
+
+                <div class="leaderboard-container">
+                    <div class="leaderboard-tabs">
+                        <button class="tab-btn active" data-tab="weekly">Esta Semana</button>
+                        <button class="tab-btn" data-tab="monthly">Este Mes</button>
+                        <button class="tab-btn" data-tab="alltime">Histórico</button>
+                    </div>
+
+                    <div class="leaderboard-content">
+                        <!-- Top 3 -->
+                        <div class="top-three">
+                            <div class="top-user second">
+                                <div class="top-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=33" alt="Carlos M.">
+                                    <span class="position">2</span>
+                                </div>
+                                <strong>Carlos M.</strong>
+                                <span class="savings">1,456L</span>
+                            </div>
+                            <div class="top-user first">
+                                <div class="crown"><i class="ri-vip-crown-fill"></i></div>
+                                <div class="top-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=47" alt="María G.">
+                                    <span class="position">1</span>
+                                </div>
+                                <strong>María G.</strong>
+                                <span class="savings">2,134L</span>
+                            </div>
+                            <div class="top-user third">
+                                <div class="top-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=15" alt="Ana T.">
+                                    <span class="position">3</span>
+                                </div>
+                                <strong>Ana T.</strong>
+                                <span class="savings">1,287L</span>
+                            </div>
+                        </div>
+
+                        <!-- Lista del 4 al 10 -->
+                        <div class="leaderboard-list">
+                            <div class="leaderboard-item">
+                                <span class="rank">4</span>
+                                <img src="https://i.pravatar.cc/100?img=22" alt="Usuario" class="user-avatar-sm">
+                                <span class="user-name">Roberto S.</span>
+                                <span class="user-savings">1,102L</span>
+                                <span class="trend up"><i class="ri-arrow-up-line"></i> 2</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="rank">5</span>
+                                <img src="https://i.pravatar.cc/100?img=28" alt="Usuario" class="user-avatar-sm">
+                                <span class="user-name">Lucía F.</span>
+                                <span class="user-savings">987L</span>
+                                <span class="trend down"><i class="ri-arrow-down-line"></i> 1</span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="rank">6</span>
+                                <img src="https://i.pravatar.cc/100?img=36" alt="Usuario" class="user-avatar-sm">
+                                <span class="user-name">Pedro R.</span>
+                                <span class="user-savings">923L</span>
+                                <span class="trend same"><i class="ri-subtract-line"></i></span>
+                            </div>
+                            <div class="leaderboard-item">
+                                <span class="rank">7</span>
+                                <img src="https://i.pravatar.cc/100?img=41" alt="Usuario" class="user-avatar-sm">
+                                <span class="user-name">Sofía M.</span>
+                                <span class="user-savings">856L</span>
+                                <span class="trend up"><i class="ri-arrow-up-line"></i> 5</span>
+                            </div>
+                            <div class="leaderboard-item highlight">
+                                <span class="rank">42</span>
+                                <img src="https://i.pravatar.cc/100?img=68" alt="Tú" class="user-avatar-sm">
+                                <span class="user-name">Tú</span>
+                                <span class="user-savings">234L</span>
+                                <span class="trend up"><i class="ri-arrow-up-line"></i> 8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Retos Activos -->
+        <section class="active-challenges-section" id="retos">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="ri-fire-line"></i> Retos Activos</h2>
+                    <p>Únete a los desafíos y gana badges exclusivos</p>
+                </div>
+
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <span class="challenge-difficulty easy">Fácil</span>
+                            <span class="challenge-time"><i class="ri-time-line"></i> 5 días restantes</span>
+                        </div>
+                        <div class="challenge-icon">🚿</div>
+                        <h3>Ducha Express</h3>
+                        <p>Reduce tu tiempo de ducha a máximo 5 minutos durante 7 días</p>
+                        <div class="challenge-meta">
+                            <span><i class="ri-drop-line"></i> ~200L ahorro</span>
+                            <span><i class="ri-group-line"></i> 234 participantes</span>
+                        </div>
+                        <div class="challenge-progress">
+                            <div class="progress-info">
+                                <span>Tu progreso</span>
+                                <span>3/7 días</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 43%;"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary full-width">Continuar reto</button>
+                    </div>
+
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <span class="challenge-difficulty medium">Medio</span>
+                            <span class="challenge-time"><i class="ri-time-line"></i> 12 días restantes</span>
+                        </div>
+                        <div class="challenge-icon">🍽️</div>
+                        <h3>Platos en Frío</h3>
+                        <p>Lava los platos usando solo agua fría durante una semana</p>
+                        <div class="challenge-meta">
+                            <span><i class="ri-drop-line"></i> ~150L ahorro</span>
+                            <span><i class="ri-group-line"></i> 145 participantes</span>
+                        </div>
+                        <button class="btn btn-secondary full-width" onclick="joinChallenge('platos')">
+                            <i class="ri-add-line"></i> Unirme
+                        </button>
+                    </div>
+
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <span class="challenge-difficulty hard">Difícil</span>
+                            <span class="challenge-time"><i class="ri-time-line"></i> 20 días restantes</span>
+                        </div>
+                        <div class="challenge-icon">🌧️</div>
+                        <h3>Caza Lluvia</h3>
+                        <p>Recolecta agua de lluvia y úsala para regar tus plantas</p>
+                        <div class="challenge-meta">
+                            <span><i class="ri-drop-line"></i> ~500L ahorro</span>
+                            <span><i class="ri-group-line"></i> 67 participantes</span>
+                        </div>
+                        <button class="btn btn-secondary full-width" onclick="joinChallenge('lluvia')">
+                            <i class="ri-add-line"></i> Unirme
+                        </button>
+                    </div>
+
+                    <div class="challenge-card coming-soon">
+                        <div class="challenge-header">
+                            <span class="challenge-badge"><i class="ri-calendar-line"></i> Próximamente</span>
+                        </div>
+                        <div class="challenge-icon">🏆</div>
+                        <h3>Maratón de Ahorro</h3>
+                        <p>30 días de ahorro consecutivo. ¿Estás listo para el reto definitivo?</p>
+                        <div class="challenge-meta">
+                            <span><i class="ri-drop-line"></i> ~1000L ahorro</span>
+                            <span><i class="ri-notification-line"></i> Notificarme</span>
+                        </div>
+                        <button class="btn btn-tertiary full-width" onclick="notifyChallenge('maraton')">
+                            <i class="ri-notification-3-line"></i> Recordarme
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo">
+                        <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo" class="logo-img"> BlueGua
+                    </a>
+                    <p>La plataforma educativa que ayuda a comunidades a ahorrar agua y proteger el medio ambiente.</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank" rel="noopener"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="ri-instagram-line"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="ri-tiktok-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Producto</h4>
+                    <a href="index.html#beneficios">Características</a>
+                    <a href="index.html#planes">Planes</a>
+                    <a href="guias.html">Guías</a>
+                    <a href="comunidad.html">Comunidad</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Compañía</h4>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Prensa</a>
+                    <a href="index.html#contact">Contacto</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Licencias</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 BlueGua. Todos los derechos reservados.</p>
+                <div>
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button - US08 -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Volver arriba">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Share Modal -->
+    <div class="modal share-modal" id="shareModal">
+        <div class="modal-content share-modal-content">
+            <div class="modal-header">
+                <h2>Compartir</h2>
+                <button class="modal-close" onclick="closeShareModal()" aria-label="Cerrar">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Comparte este contenido con tus amigos</p>
+                <div class="share-options">
+                    <button class="share-btn whatsapp" onclick="shareOn('whatsapp')">
+                        <i class="ri-whatsapp-line"></i>
+                        WhatsApp
+                    </button>
+                    <button class="share-btn facebook" onclick="shareOn('facebook')">
+                        <i class="ri-facebook-fill"></i>
+                        Facebook
+                    </button>
+                    <button class="share-btn twitter" onclick="shareOn('twitter')">
+                        <i class="ri-twitter-fill"></i>
+                        Twitter
+                    </button>
+                    <button class="share-btn email" onclick="shareOn('email')">
+                        <i class="ri-mail-line"></i>
+                        Email
+                    </button>
+                </div>
+                <div class="share-link">
+                    <input type="text" id="shareLinkInput" readonly>
+                    <button class="btn btn-primary" onclick="copyShareLink()">
+                        <i class="ri-file-copy-line"></i> Copiar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="notificationToast">
+        <i class="ri-check-line"></i>
+        <span id="notificationMessage">Acción realizada</span>
+    </div>
+
+    <script src="public/assets/scripts/comunidad.js"></script>
+</body>
+</html>

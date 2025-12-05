@@ -68,6 +68,19 @@
         transform: scale(1);
     }
 
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px 15px;
+    }
+
     /* TESTIMONIALS SECTION */
 
     /* FAQ SECTION */

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | BlueGua</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="public/assets/styles/styles.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/header.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/footer.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/scroll-top.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/perfil.css">
+    <link rel="stylesheet" href="public/assets/styles/responsive.css">
+</head>
+
+<body>
+
+    <!-- Header - US06: Navegación entre secciones -->
+    <header class="header" id="inicio">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo" class="logo-img"> BlueGua
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#planes">Planes</a>
+                <a href="index.html#beneficios">Beneficios</a>
+                <a href="comunidad.html">Comunidad</a>
+                <a href="guias.html">Guías</a>
+                <a href="index.html#contact">Contacto</a>
+                <a href="#" class="btn btn-primary mobile-cta" id="mobileAuthBtn">Mi Perfil</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-primary desktop-cta" id="desktopAuthBtn">Mi Perfil</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="perfil-main">
+        
+        <!-- Indicador de Sincronización - US48 -->
+        <div class="sync-indicator" id="syncIndicator">
+            <div class="sync-status synced">
+                <i class="ri-check-line"></i>
+                <span>Sincronizado</span>
+                <small>Actualizado hace 2 min</small>
+            </div>
+        </div>
+
+        <!-- Contenedor principal del perfil -->
+        <div class="container perfil-container">
+            
+            <!-- Sidebar de navegación del perfil -->
+            <aside class="perfil-sidebar">
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Avatar del usuario">
+                        <span class="online-badge"></span>
+                    </div>
+                    <h3 class="user-name">Juan Pérez</h3>
+                    <p class="user-email">juan.perez@email.com</p>
+                    <span class="user-plan">Plan Hogar</span>
+                </div>
+
+                <nav class="perfil-nav">
+                    <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                        <i class="ri-dashboard-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#historial" class="nav-item" data-section="historial">
+                        <i class="ri-history-line"></i>
+                        <span>Historial de Ahorro</span>
+                    </a>
+                    <a href="#impacto" class="nav-item" data-section="impacto">
+                        <i class="ri-leaf-line"></i>
+                        <span>Impacto Ambiental</span>
+                    </a>
+                    <a href="#suscripcion" class="nav-item" data-section="suscripcion">
+                        <i class="ri-vip-crown-line"></i>
+                        <span>Mi Suscripción</span>
+                    </a>
+                    <a href="#sincronizacion" class="nav-item" data-section="sincronizacion">
+                        <i class="ri-refresh-line"></i>
+                        <span>Sincronización</span>
+                    </a>
+                    <a href="#configuracion" class="nav-item" data-section="configuracion">
+                        <i class="ri-settings-3-line"></i>
+                        <span>Configuración</span>
+                    </a>
+                </nav>
+
+                <!-- US18: Cerrar sesión -->
+                <button class="btn-logout" id="btnLogout">
+                    <i class="ri-logout-box-r-line"></i>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </aside>
+
+            <!-- Contenido principal -->
+            <div class="perfil-content">
+                
+                <!-- Sección Dashboard - US22: Métricas de impacto -->
+                <section class="perfil-section active" id="dashboard">
+                    <div class="section-header">
+                        <h2><i class="ri-dashboard-line"></i> Dashboard</h2>
+                        <p>Resumen de tu actividad y métricas de ahorro</p>
+                    </div>
+
+                    <!-- Métricas principales -->
+                    <div class="metrics-grid">
+                        <div class="metric-card primary">
+                            <div class="metric-icon">
+                                <i class="ri-drop-line"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-value">2,450 L</span>
+                                <span class="metric-label">Agua ahorrada este mes</span>
+                            </div>
+                            <div class="metric-trend positive">
+                                <i class="ri-arrow-up-line"></i> +12%
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="ri-percent-line"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-value">28%</span>
+                                <span class="metric-label">Reducción vs mes anterior</span>
+                            </div>
+                            <div class="metric-trend positive">
+                                <i class="ri-arrow-up-line"></i> +3%
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="ri-calendar-check-line"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-value">45</span>
+                                <span class="metric-label">Días consecutivos</span>
+                            </div>
+                            <div class="metric-trend neutral">
+                                <i class="ri-fire-line"></i> Racha
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="ri-trophy-line"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-value">12</span>
+                                <span class="metric-label">Retos completados</span>
+                            </div>
+                            <div class="metric-trend positive">
+                                <i class="ri-arrow-up-line"></i> +2
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico de consumo -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Consumo Semanal</h3>
+                            <div class="chart-filters">
+                                <button class="chart-filter active">Semana</button>
+                                <button class="chart-filter">Mes</button>
+                                <button class="chart-filter">Año</button>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <div class="bar-chart">
+                                <div class="bar" style="--height: 60%;" data-value="120L">
+                                    <span class="bar-label">Lun</span>
+                                </div>
+                                <div class="bar" style="--height: 45%;" data-value="90L">
+                                    <span class="bar-label">Mar</span>
+                                </div>
+                                <div class="bar" style="--height: 70%;" data-value="140L">
+                                    <span class="bar-label">Mié</span>
+                                </div>
+                                <div class="bar" style="--height: 55%;" data-value="110L">
+                                    <span class="bar-label">Jue</span>
+                                </div>
+                                <div class="bar" style="--height: 40%;" data-value="80L">
+                                    <span class="bar-label">Vie</span>
+                                </div>
+                                <div class="bar" style="--height: 80%;" data-value="160L">
+                                    <span class="bar-label">Sáb</span>
+                                </div>
+                                <div class="bar" style="--height: 65%;" data-value="130L">
+                                    <span class="bar-label">Dom</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección Historial - US43: Consultar historial de ahorro -->
+                <section class="perfil-section" id="historial">
+                    <div class="section-header">
+                        <h2><i class="ri-history-line"></i> Historial de Ahorro</h2>
+                        <p>Consulta tu progreso mensual y evalúa tus avances</p>
+                    </div>
+
+                    <!-- Filtros del historial -->
+                    <div class="history-filters">
+                        <select id="historyPeriod" class="filter-select">
+                            <option value="week">Esta semana</option>
+                            <option value="month" selected>Este mes</option>
+                            <option value="quarter">Este trimestre</option>
+                            <option value="year">Este año</option>
+                        </select>
+                        <select id="historyType" class="filter-select">
+                            <option value="all">Todos los tipos</option>
+                            <option value="domestic">Consumo doméstico</option>
+                            <option value="garden">Riego jardín</option>
+                            <option value="cleaning">Limpieza</option>
+                        </select>
+                    </div>
+
+                    <!-- Timeline de historial -->
+                    <div class="history-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="day">04</span>
+                                <span class="month">Dic</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4>Ahorro en ducha</h4>
+                                    <span class="badge success">-18%</span>
+                                </div>
+                                <p>Reducción significativa usando temporizador de 5 minutos</p>
+                                <div class="timeline-stats">
+                                    <span><i class="ri-drop-line"></i> 45L ahorrados</span>
+                                    <span><i class="ri-time-line"></i> Consumo doméstico</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="day">03</span>
+                                <span class="month">Dic</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4>Riego eficiente</h4>
+                                    <span class="badge success">-25%</span>
+                                </div>
+                                <p>Implementación de riego por goteo en el jardín</p>
+                                <div class="timeline-stats">
+                                    <span><i class="ri-drop-line"></i> 80L ahorrados</span>
+                                    <span><i class="ri-plant-line"></i> Riego jardín</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="day">02</span>
+                                <span class="month">Dic</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4>Lavado de ropa</h4>
+                                    <span class="badge warning">-8%</span>
+                                </div>
+                                <p>Uso de carga completa en lavadora</p>
+                                <div class="timeline-stats">
+                                    <span><i class="ri-drop-line"></i> 20L ahorrados</span>
+                                    <span><i class="ri-t-shirt-line"></i> Limpieza</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <span class="day">01</span>
+                                <span class="month">Dic</span>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h4>Inicio del mes</h4>
+                                    <span class="badge info">Nuevo ciclo</span>
+                                </div>
+                                <p>Meta del mes: Reducir consumo en 20%</p>
+                                <div class="timeline-stats">
+                                    <span><i class="ri-flag-line"></i> Meta establecida</span>
+                                    <span><i class="ri-calendar-line"></i> Diciembre 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección Impacto Ambiental - US45: Ver impacto ambiental equivalente -->
+                <section class="perfil-section" id="impacto">
+                    <div class="section-header">
+                        <h2><i class="ri-leaf-line"></i> Impacto Ambiental</h2>
+                        <p>Visualiza tu ahorro traducido en ejemplos simples</p>
+                    </div>
+
+                    <!-- Resumen de ahorro total -->
+                    <div class="impact-summary">
+                        <div class="total-saved">
+                            <i class="ri-drop-fill"></i>
+                            <div>
+                                <span class="value">15,780 L</span>
+                                <span class="label">Total ahorrado este año</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equivalencias de impacto -->
+                    <div class="equivalences-grid">
+                        <div class="equivalence-card">
+                            <div class="equivalence-icon">
+                                <i class="ri-user-heart-line"></i>
+                            </div>
+                            <div class="equivalence-info">
+                                <span class="equivalence-value">526 días</span>
+                                <span class="equivalence-desc">de agua para una persona</span>
+                            </div>
+                            <div class="equivalence-visual">
+                                <div class="mini-icons">
+                                    <i class="ri-user-line"></i>
+                                    <i class="ri-drop-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="equivalence-card">
+                            <div class="equivalence-icon">
+                                <i class="ri-plant-line"></i>
+                            </div>
+                            <div class="equivalence-info">
+                                <span class="equivalence-value">316 árboles</span>
+                                <span class="equivalence-desc">regados durante un mes</span>
+                            </div>
+                            <div class="equivalence-visual">
+                                <div class="mini-icons">
+                                    <i class="ri-tree-line"></i>
+                                    <i class="ri-tree-line"></i>
+                                    <i class="ri-tree-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="equivalence-card">
+                            <div class="equivalence-icon">
+                                <i class="ri-home-heart-line"></i>
+                            </div>
+                            <div class="equivalence-info">
+                                <span class="equivalence-value">3 familias</span>
+                                <span class="equivalence-desc">abastecidas por 2 meses</span>
+                            </div>
+                            <div class="equivalence-visual">
+                                <div class="mini-icons">
+                                    <i class="ri-group-line"></i>
+                                    <i class="ri-home-line"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="equivalence-card">
+                            <div class="equivalence-icon">
+                                <i class="ri-contrast-drop-line"></i>
+                            </div>
+                            <div class="equivalence-info">
+                                <span class="equivalence-value">31 piscinas</span>
+                                <span class="equivalence-desc">infantiles llenas</span>
+                            </div>
+                            <div class="equivalence-visual">
+                                <div class="mini-icons">
+                                    <i class="ri-drop-fill"></i>
+                                    <i class="ri-drop-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CO2 equivalente -->
+                    <div class="co2-impact">
+                        <div class="co2-header">
+                            <i class="ri-cloud-line"></i>
+                            <h3>Reducción de CO₂ equivalente</h3>
+                        </div>
+                        <div class="co2-content">
+                            <div class="co2-stat">
+                                <span class="co2-value">47.3 kg</span>
+                                <span class="co2-label">CO₂ no emitido</span>
+                            </div>
+                            <div class="co2-equivalent">
+                                <p>Equivalente a <strong>189 km</strong> no recorridos en auto</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección Suscripción - US15, US16, US17, US14 -->
+                <section class="perfil-section" id="suscripcion">
+                    <div class="section-header">
+                        <h2><i class="ri-vip-crown-line"></i> Mi Suscripción</h2>
+                        <p>Gestiona tu plan y método de pago</p>
+                    </div>
+
+                    <!-- Estado actual del plan - US15 -->
+                    <div class="subscription-status">
+                        <div class="current-plan">
+                            <div class="plan-badge">
+                                <i class="ri-home-line"></i>
+                            </div>
+                            <div class="plan-details">
+                                <h3>Plan Hogar</h3>
+                                <p>Tu plan actual</p>
+                            </div>
+                            <div class="plan-status active">
+                                <i class="ri-checkbox-circle-fill"></i>
+                                <span>Activo</span>
+                            </div>
+                        </div>
+
+                        <div class="plan-info-grid">
+                            <div class="plan-info-item">
+                                <span class="info-label">Precio</span>
+                                <span class="info-value">Gratis</span>
+                            </div>
+                            <div class="plan-info-item">
+                                <span class="info-label">Fecha de inicio</span>
+                                <span class="info-value">15 Oct 2025</span>
+                            </div>
+                            <div class="plan-info-item">
+                                <span class="info-label">Próxima renovación</span>
+                                <span class="info-value">Sin vencimiento</span>
+                            </div>
+                            <div class="plan-info-item">
+                                <span class="info-label">Estado</span>
+                                <span class="info-value status-active">Activo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upgrade a plan superior -->
+                    <div class="upgrade-section">
+                        <div class="upgrade-card">
+                            <div class="upgrade-header">
+                                <span class="upgrade-tag">Recomendado</span>
+                                <h3>Plan Negocios</h3>
+                                <p class="upgrade-price">S/49<span>/mes</span></p>
+                            </div>
+                            <ul class="upgrade-features">
+                                <li><i class="ri-check-line"></i> Todo del Plan Hogar</li>
+                                <li><i class="ri-check-line"></i> Hasta 50 usuarios</li>
+                                <li><i class="ri-check-line"></i> Reportes avanzados</li>
+                                <li><i class="ri-check-line"></i> Soporte prioritario</li>
+                            </ul>
+                            <button class="btn btn-primary full-width" id="btnUpgrade">
+                                <i class="ri-arrow-up-circle-line"></i> Mejorar Plan
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Historial de pagos - US14 -->
+                    <div class="payment-history">
+                        <h3>Historial de Pagos</h3>
+                        <div class="payment-list">
+                            <div class="payment-item">
+                                <div class="payment-info">
+                                    <span class="payment-desc">Plan Hogar - Activación</span>
+                                    <span class="payment-date">15 Oct 2025</span>
+                                </div>
+                                <div class="payment-amount free">Gratis</div>
+                                <span class="payment-status success">
+                                    <i class="ri-checkbox-circle-fill"></i> Completado
+                                </span>
+                            </div>
+                        </div>
+                        <p class="no-payments">No hay más pagos registrados</p>
+                    </div>
+
+                    <!-- Botón cancelar suscripción - US16 -->
+                    <div class="cancel-section">
+                        <button class="btn btn-danger-outline" id="btnCancelSubscription">
+                            <i class="ri-close-circle-line"></i> Cancelar Suscripción
+                        </button>
+                        <p class="cancel-note">Podrás seguir usando BlueGua con funciones limitadas</p>
+                    </div>
+                </section>
+
+                <!-- Sección Sincronización - US47, US48, US49, US50 -->
+                <section class="perfil-section" id="sincronizacion">
+                    <div class="section-header">
+                        <h2><i class="ri-refresh-line"></i> Sincronización</h2>
+                        <p>Gestiona tus datos offline y estado de sincronización</p>
+                    </div>
+
+                    <!-- Estado actual de sincronización - US48 -->
+                    <div class="sync-status-card">
+                        <div class="sync-main-status synced" id="mainSyncStatus">
+                            <div class="sync-icon">
+                                <i class="ri-checkbox-circle-fill"></i>
+                            </div>
+                            <div class="sync-info">
+                                <h3>Datos Sincronizados</h3>
+                                <p>Última sincronización: <strong>Hace 2 minutos</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="sync-details">
+                            <div class="sync-detail-item">
+                                <span class="detail-label">Datos locales</span>
+                                <span class="detail-value">15.2 MB</span>
+                            </div>
+                            <div class="sync-detail-item">
+                                <span class="detail-label">Pendientes</span>
+                                <span class="detail-value pending">0 registros</span>
+                            </div>
+                            <div class="sync-detail-item">
+                                <span class="detail-label">Conexión</span>
+                                <span class="detail-value online">
+                                    <i class="ri-wifi-line"></i> Conectado
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Botón sincronizar ahora - US49 -->
+                        <button class="btn btn-primary" id="btnSyncNow">
+                            <i class="ri-refresh-line"></i> Sincronizar Ahora
+                        </button>
+                    </div>
+
+                    <!-- Datos guardados offline - US47 -->
+                    <div class="offline-data-section">
+                        <h3><i class="ri-database-2-line"></i> Datos Guardados Offline</h3>
+                        <div class="offline-data-grid">
+                            <div class="offline-item">
+                                <div class="offline-icon">
+                                    <i class="ri-file-list-line"></i>
+                                </div>
+                                <div class="offline-info">
+                                    <span class="offline-name">Tests completados</span>
+                                    <span class="offline-count">8 registros</span>
+                                </div>
+                                <span class="offline-status synced">
+                                    <i class="ri-check-line"></i>
+                                </span>
+                            </div>
+
+                            <div class="offline-item">
+                                <div class="offline-icon">
+                                    <i class="ri-trophy-line"></i>
+                                </div>
+                                <div class="offline-info">
+                                    <span class="offline-name">Retos finalizados</span>
+                                    <span class="offline-count">12 registros</span>
+                                </div>
+                                <span class="offline-status synced">
+                                    <i class="ri-check-line"></i>
+                                </span>
+                            </div>
+
+                            <div class="offline-item">
+                                <div class="offline-icon">
+                                    <i class="ri-book-open-line"></i>
+                                </div>
+                                <div class="offline-info">
+                                    <span class="offline-name">Progreso en guías</span>
+                                    <span class="offline-count">5 guías</span>
+                                </div>
+                                <span class="offline-status synced">
+                                    <i class="ri-check-line"></i>
+                                </span>
+                            </div>
+
+                            <div class="offline-item">
+                                <div class="offline-icon">
+                                    <i class="ri-bar-chart-line"></i>
+                                </div>
+                                <div class="offline-info">
+                                    <span class="offline-name">Métricas de ahorro</span>
+                                    <span class="offline-count">45 registros</span>
+                                </div>
+                                <span class="offline-status synced">
+                                    <i class="ri-check-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Historial de sincronizaciones - US50 -->
+                    <div class="sync-history-section">
+                        <div class="sync-history-header">
+                            <h3><i class="ri-time-line"></i> Historial de Sincronizaciones</h3>
+                            <div class="sync-history-filters">
+                                <select id="syncHistoryFilter" class="filter-select">
+                                    <option value="all">Todos</option>
+                                    <option value="success">Exitosas</option>
+                                    <option value="failed">Fallidas</option>
+                                    <option value="partial">Parciales</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="sync-history-list">
+                            <div class="sync-history-item success">
+                                <div class="sync-history-icon">
+                                    <i class="ri-checkbox-circle-fill"></i>
+                                </div>
+                                <div class="sync-history-info">
+                                    <span class="sync-type">Sincronización automática</span>
+                                    <span class="sync-datetime">04 Dic 2025, 14:30:25</span>
+                                </div>
+                                <div class="sync-history-result">
+                                    <span class="sync-records">15 registros</span>
+                                    <span class="sync-status-badge success">Éxito</span>
+                                </div>
+                            </div>
+
+                            <div class="sync-history-item success">
+                                <div class="sync-history-icon">
+                                    <i class="ri-checkbox-circle-fill"></i>
+                                </div>
+                                <div class="sync-history-info">
+                                    <span class="sync-type">Sincronización manual</span>
+                                    <span class="sync-datetime">04 Dic 2025, 11:15:42</span>
+                                </div>
+                                <div class="sync-history-result">
+                                    <span class="sync-records">8 registros</span>
+                                    <span class="sync-status-badge success">Éxito</span>
+                                </div>
+                            </div>
+
+                            <div class="sync-history-item failed">
+                                <div class="sync-history-icon">
+                                    <i class="ri-close-circle-fill"></i>
+                                </div>
+                                <div class="sync-history-info">
+                                    <span class="sync-type">Sincronización automática</span>
+                                    <span class="sync-datetime">03 Dic 2025, 16:45:10</span>
+                                </div>
+                                <div class="sync-history-result">
+                                    <span class="sync-error">Error de conexión</span>
+                                    <span class="sync-status-badge failed">Fallo</span>
+                                </div>
+                            </div>
+
+                            <div class="sync-history-item partial">
+                                <div class="sync-history-icon">
+                                    <i class="ri-error-warning-fill"></i>
+                                </div>
+                                <div class="sync-history-info">
+                                    <span class="sync-type">Sincronización automática</span>
+                                    <span class="sync-datetime">03 Dic 2025, 09:20:35</span>
+                                </div>
+                                <div class="sync-history-result">
+                                    <span class="sync-records">5 de 7 registros</span>
+                                    <span class="sync-status-badge partial">Parcial</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección Configuración -->
+                <section class="perfil-section" id="configuracion">
+                    <div class="section-header">
+                        <h2><i class="ri-settings-3-line"></i> Configuración</h2>
+                        <p>Personaliza tu cuenta y preferencias</p>
+                    </div>
+
+                    <!-- Datos personales -->
+                    <div class="settings-group">
+                        <h3>Datos Personales</h3>
+                        <form class="settings-form" id="personalDataForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="settingsName">Nombre</label>
+                                    <input type="text" id="settingsName" value="Juan" placeholder="Tu nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="settingsLastname">Apellido</label>
+                                    <input type="text" id="settingsLastname" value="Pérez" placeholder="Tu apellido">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsEmail">Correo electrónico</label>
+                                <input type="email" id="settingsEmail" value="juan.perez@email.com" placeholder="tu@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="settingsPhone">Teléfono</label>
+                                <input type="tel" id="settingsPhone" value="987 654 321" placeholder="987 654 321">
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="ri-save-line"></i> Guardar Cambios
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Preferencias de notificación -->
+                    <div class="settings-group">
+                        <h3>Notificaciones</h3>
+                        <div class="toggle-group">
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <span class="toggle-label">Recordatorios de registro</span>
+                                    <span class="toggle-desc">Recibe alertas para registrar tu consumo diario</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <span class="toggle-label">Alertas de consumo excesivo</span>
+                                    <span class="toggle-desc">Notificaciones cuando superes tu meta</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <span class="toggle-label">Novedades y consejos</span>
+                                    <span class="toggle-desc">Tips semanales para ahorrar agua</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <span class="toggle-label">Sincronización automática</span>
+                                    <span class="toggle-desc">Sincronizar datos al recuperar conexión</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seguridad -->
+                    <div class="settings-group">
+                        <h3>Seguridad</h3>
+                        <div class="security-actions">
+                            <button class="btn btn-secondary" id="btnChangePassword">
+                                <i class="ri-lock-line"></i> Cambiar Contraseña
+                            </button>
+                            <button class="btn btn-secondary" id="btnExportData">
+                                <i class="ri-download-line"></i> Exportar mis Datos
+                            </button>
+                            <button class="btn btn-danger-outline" id="btnDeleteAccount">
+                                <i class="ri-delete-bin-line"></i> Eliminar Cuenta
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo">
+                        <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo" class="logo-img"> BlueGua
+                    </a>
+                    <p>La plataforma educativa que ayuda a comunidades a ahorrar agua y proteger el medio ambiente.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Producto</h4>
+                    <a href="index.html#beneficios">Características</a>
+                    <a href="index.html#planes">Planes</a>
+                    <a href="guias.html">Guías</a>
+                    <a href="comunidad.html">Comunidad</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Compañía</h4>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Prensa</a>
+                    <a href="index.html#contact">Contacto</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Licencias</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 BlueGua. Todos los derechos reservados.</p>
+                <div>
+                    <a href="#">Términos</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- US08: Botón "Ir arriba" -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Volver arriba">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Modales -->
+
+    <!-- Modal Login - US12 -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content modal-auth">
+            <button class="modal-close" id="closeLogin">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-header">
+                <h2>Iniciar Sesión</h2>
+                <p>Accede a tu cuenta BlueGua</p>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Correo electrónico</label>
+                    <input type="email" id="loginEmail" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" placeholder="Tu contraseña" required>
+                        <button type="button" class="toggle-password">
+                            <i class="ri-eye-line"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Mantener sesión activa</span>
+                    </label>
+                    <a href="#" class="forgot-link" id="showForgotPassword">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">
+                    <i class="ri-login-box-line"></i> Iniciar Sesión
+                </button>
+            </form>
+            <div class="auth-footer">
+                <p>¿No tienes cuenta? <a href="#" id="showRegister">Regístrate aquí</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Registro - US11 -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content modal-auth">
+            <button class="modal-close" id="closeRegister">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-header">
+                <h2>Crear Cuenta</h2>
+                <p>Únete a la comunidad BlueGua</p>
+            </div>
+            <form class="auth-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regName">Nombre <span class="required">*</span></label>
+                        <input type="text" id="regName" placeholder="Juan" required minlength="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="regLastname">Apellido <span class="required">*</span></label>
+                        <input type="text" id="regLastname" placeholder="Pérez" required minlength="2">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Correo electrónico <span class="required">*</span></label>
+                    <input type="email" id="regEmail" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Contraseña <span class="required">*</span></label>
+                    <div class="password-input">
+                        <input type="password" id="regPassword" placeholder="Mínimo 8 caracteres" required minlength="8">
+                        <button type="button" class="toggle-password">
+                            <i class="ri-eye-line"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Seguridad de contraseña</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirmar Contraseña <span class="required">*</span></label>
+                    <div class="password-input">
+                        <input type="password" id="regConfirmPassword" placeholder="Repite tu contraseña" required>
+                        <button type="button" class="toggle-password">
+                            <i class="ri-eye-line"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="acceptTerms" required>
+                        <span>Acepto los <a href="#">Términos de Servicio</a> y <a href="#">Política de Privacidad</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">
+                    <i class="ri-user-add-line"></i> Crear Cuenta
+                </button>
+            </form>
+            <div class="auth-footer">
+                <p>¿Ya tienes cuenta? <a href="#" id="showLogin">Inicia sesión</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Recuperar Contraseña - US13 -->
+    <div class="modal" id="forgotModal">
+        <div class="modal-content modal-auth">
+            <button class="modal-close" id="closeForgot">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-header">
+                <h2>Recuperar Contraseña</h2>
+                <p>Te enviaremos un enlace para restablecer tu contraseña</p>
+            </div>
+            <form class="auth-form" id="forgotForm">
+                <div class="form-group">
+                    <label for="forgotEmail">Correo electrónico</label>
+                    <input type="email" id="forgotEmail" placeholder="tu@email.com" required>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">
+                    <i class="ri-mail-send-line"></i> Enviar Instrucciones
+                </button>
+            </form>
+            <div class="auth-footer">
+                <p><a href="#" id="backToLogin"><i class="ri-arrow-left-line"></i> Volver a iniciar sesión</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirmación de Pago - US17, US14 -->
+    <div class="modal" id="paymentConfirmModal">
+        <div class="modal-content modal-payment">
+            <div class="payment-success-icon">
+                <i class="ri-checkbox-circle-fill"></i>
+            </div>
+            <h2>¡Pago Exitoso!</h2>
+            <p>Tu suscripción ha sido activada correctamente</p>
+            
+            <div class="payment-details">
+                <div class="payment-detail-item">
+                    <span class="detail-label">Plan contratado</span>
+                    <span class="detail-value">Plan Negocios</span>
+                </div>
+                <div class="payment-detail-item">
+                    <span class="detail-label">Monto pagado</span>
+                    <span class="detail-value">S/49.00</span>
+                </div>
+                <div class="payment-detail-item">
+                    <span class="detail-label">Fecha de vencimiento</span>
+                    <span class="detail-value">04 Ene 2026</span>
+                </div>
+                <div class="payment-detail-item">
+                    <span class="detail-label">N° de transacción</span>
+                    <span class="detail-value">#TXN-2025120401</span>
+                </div>
+            </div>
+
+            <div class="payment-email-notice">
+                <i class="ri-mail-check-line"></i>
+                <p>Hemos enviado los detalles a tu correo electrónico</p>
+            </div>
+
+            <button class="btn btn-primary full-width" id="closePaymentConfirm">
+                <i class="ri-check-line"></i> Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Cancelar Suscripción - US16 -->
+    <div class="modal" id="cancelSubscriptionModal">
+        <div class="modal-content modal-confirm">
+            <div class="confirm-icon warning">
+                <i class="ri-error-warning-line"></i>
+            </div>
+            <h2>¿Cancelar Suscripción?</h2>
+            <p>Estás a punto de cancelar tu suscripción. Se detendrán los cobros futuros y perderás acceso a las funciones premium.</p>
+            
+            <div class="confirm-actions">
+                <button class="btn btn-secondary" id="cancelCancelSub">Mantener Suscripción</button>
+                <button class="btn btn-danger" id="confirmCancelSub">Sí, Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Cerrar Sesión - US18 -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content modal-confirm">
+            <div class="confirm-icon info">
+                <i class="ri-logout-box-r-line"></i>
+            </div>
+            <h2>¿Cerrar Sesión?</h2>
+            <p>Serás redirigido a la página de inicio. ¿Deseas continuar?</p>
+            
+            <div class="confirm-actions">
+                <button class="btn btn-secondary" id="cancelLogout">Cancelar</button>
+                <button class="btn btn-primary" id="confirmLogout">Sí, Cerrar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="public/assets/scripts/perfil.js"></script>
+</body>
+</html>
