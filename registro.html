@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | BlueGua</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="public/assets/styles/styles.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-container">
+        <!-- Panel izquierdo - Branding -->
+        <div class="auth-branding">
+            <a href="index.html" class="auth-logo">
+                <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo"> BlueGua
+            </a>
+            <div class="auth-branding-content">
+                <h1>Únete a BlueGua</h1>
+                <p>Crea tu cuenta gratuita y comienza a ahorrar agua mientras cuidas el medio ambiente.</p>
+                
+                <div class="auth-stats">
+                    <div class="auth-stat">
+                        <span class="stat-value">10K+</span>
+                        <span class="stat-label">Usuarios activos</span>
+                    </div>
+                    <div class="auth-stat">
+                        <span class="stat-value">2.5M L</span>
+                        <span class="stat-label">Agua ahorrada</span>
+                    </div>
+                    <div class="auth-stat">
+                        <span class="stat-value">25%</span>
+                        <span class="stat-label">Reducción promedio</span>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-branding-footer">
+                <p>© 2025 BlueGua. Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+        <!-- Panel derecho - Formulario -->
+        <div class="auth-form-panel">
+            <div class="auth-form-container">
+                <div class="auth-header">
+                    <h2>Crear Cuenta</h2>
+                    <p>Completa el formulario para unirte a nuestra comunidad</p>
+                </div>
+
+                <!-- US11: Formulario de registro -->
+                <form class="auth-form" id="registerForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="regName">Nombre <span class="required">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="ri-user-line"></i>
+                                <input type="text" id="regName" placeholder="Juan" required minlength="2">
+                            </div>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="regLastname">Apellido <span class="required">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="ri-user-line"></i>
+                                <input type="text" id="regLastname" placeholder="Pérez" required minlength="2">
+                            </div>
+                            <span class="error-message" id="lastnameError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Correo electrónico <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="ri-mail-line"></i>
+                            <input type="email" id="regEmail" placeholder="tu@email.com" required>
+                        </div>
+                        <span class="error-message" id="regEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Contraseña <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="ri-lock-line"></i>
+                            <input type="password" id="regPassword" placeholder="Mínimo 8 caracteres" required minlength="8">
+                            <button type="button" class="toggle-password" aria-label="Mostrar contraseña">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <span class="strength-text">Ingresa una contraseña</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirmar Contraseña <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="ri-lock-line"></i>
+                            <input type="password" id="regConfirmPassword" placeholder="Repite tu contraseña" required>
+                            <button type="button" class="toggle-password" aria-label="Mostrar contraseña">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="acceptTerms" required>
+                            <span class="checkmark"></span>
+                            <span>Acepto los <a href="#" target="_blank">Términos de Servicio</a> y la <a href="#" target="_blank">Política de Privacidad</a></span>
+                        </label>
+                        <span class="error-message" id="termsError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="btnRegister">
+                        <span class="btn-text">Crear Cuenta</span>
+                        <span class="btn-loader"><i class="ri-loader-4-line ri-spin"></i></span>
+                    </button>
+                </form>
+
+                <!-- Mensaje de éxito/error -->
+                <div class="auth-message" id="authMessage"></div>
+
+                <div class="auth-divider">
+                    <span>o regístrate con</span>
+                </div>
+
+                <!-- Social Login (opcional/demo) -->
+                <div class="social-login">
+                    <button class="btn-social google">
+                        <i class="ri-google-fill"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="btn-social facebook">
+                        <i class="ri-facebook-fill"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+                </div>
+
+                <a href="index.html" class="back-home">
+                    <i class="ri-arrow-left-line"></i> Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="public/assets/scripts/auth.js"></script>
+</body>
+</html>

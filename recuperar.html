@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña | BlueGua</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="public/assets/styles/styles.css">
+    <link rel="stylesheet" href="public/assets/styles/sections/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-container">
+        <!-- Panel izquierdo - Branding -->
+        <div class="auth-branding">
+            <a href="index.html" class="auth-logo">
+                <img src="https://i.imgur.com/32rW4mJ.png" alt="BlueGua Logo"> BlueGua
+            </a>
+            <div class="auth-branding-content">
+                <h1>¿Olvidaste tu contraseña?</h1>
+                <p>No te preocupes, te enviaremos un enlace para restablecer tu contraseña de forma segura.</p>
+                
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Recibirás un correo con instrucciones</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="ri-shield-check-line"></i>
+                        <span>Proceso seguro y encriptado</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="ri-time-line"></i>
+                        <span>El enlace expira en 24 horas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-branding-footer">
+                <p>© 2025 BlueGua. Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+        <!-- Panel derecho - Formulario -->
+        <div class="auth-form-panel">
+            <div class="auth-form-container">
+                
+                <!-- Estado inicial: Formulario -->
+                <div id="formState">
+                    <div class="auth-header">
+                        <div class="auth-icon">
+                            <i class="ri-lock-unlock-line"></i>
+                        </div>
+                        <h2>Recuperar Contraseña</h2>
+                        <p>Ingresa tu correo electrónico y te enviaremos las instrucciones</p>
+                    </div>
+
+                    <!-- US13: Formulario de recuperación -->
+                    <form class="auth-form" id="forgotForm">
+                        <div class="form-group">
+                            <label for="forgotEmail">Correo electrónico</label>
+                            <div class="input-with-icon">
+                                <i class="ri-mail-line"></i>
+                                <input type="email" id="forgotEmail" placeholder="tu@email.com" required>
+                            </div>
+                            <span class="error-message" id="forgotEmailError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" id="btnForgot">
+                            <span class="btn-text">Enviar Instrucciones</span>
+                            <span class="btn-loader"><i class="ri-loader-4-line ri-spin"></i></span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Estado de éxito -->
+                <div id="successState" class="success-state" style="display: none;">
+                    <div class="success-icon">
+                        <i class="ri-mail-check-line"></i>
+                    </div>
+                    <h2>¡Correo enviado!</h2>
+                    <p>Hemos enviado las instrucciones para restablecer tu contraseña a:</p>
+                    <p class="email-sent" id="emailSent">tu@email.com</p>
+                    
+                    <div class="success-tips">
+                        <h4>¿No recibes el correo?</h4>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Revisa tu carpeta de spam</li>
+                            <li><i class="ri-check-line"></i> Verifica que el correo sea correcto</li>
+                            <li><i class="ri-check-line"></i> Espera unos minutos e intenta de nuevo</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-secondary btn-full" id="btnResend">
+                        <i class="ri-refresh-line"></i> Reenviar correo
+                    </button>
+                </div>
+
+                <!-- Mensaje de éxito/error -->
+                <div class="auth-message" id="authMessage"></div>
+
+                <div class="auth-footer">
+                    <p>¿Recordaste tu contraseña? <a href="login.html">Inicia sesión</a></p>
+                </div>
+
+                <a href="index.html" class="back-home">
+                    <i class="ri-arrow-left-line"></i> Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="public/assets/scripts/auth.js"></script>
+</body>
+</html>
