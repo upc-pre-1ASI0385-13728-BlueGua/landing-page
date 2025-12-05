@@ -1,0 +1,63 @@
+/* Sección del equipo */
+.team-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Grid de integrantes */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Tarjeta de integrante */
+.team-member {
+    width: 180px;   
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.team-member img:hover {
+    transform: scale(1.05);
+}
+
+/* Nombre del integrante */
+.team-member h3 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 140px;
+    }
+
+    .team-member img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        gap: 20px;
+    }
+
+    .team-member {
+        width: 120px;
+    }
+
+    .team-member img {
+        height: 130px;
+    }
+}
